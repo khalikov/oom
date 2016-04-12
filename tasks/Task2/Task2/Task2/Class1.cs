@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 
-namespace Task2
+namespace Task4
 {
    public class Auto : IFahrzeug
     {
@@ -67,6 +68,7 @@ namespace Task2
             }
         }
 
+        [JsonConstructor]
         public Auto(string Marke, string Modell, int PS, decimal Preis)
         {
             if (Preis < 0) throw new ArgumentOutOfRangeException("Preis darf nicht kleiner 0 sein.");
